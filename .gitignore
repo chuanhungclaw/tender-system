@@ -41,3 +41,6 @@ data/*.json
 # 上傳的文件
 uploads/
 temp/
+
+# Local Netlify folder
+.netlify
