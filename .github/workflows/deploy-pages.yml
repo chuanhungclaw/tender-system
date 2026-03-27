@@ -37,6 +37,9 @@ jobs:
         run: |
           cd web
           npm run build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: https://gwwdowitfadojcftwdzt.supabase.co
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd3d2Rvd2l0ZmFkb2pjZnR3ZHp0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ2MTI4NzgsImV4cCI6MjA5MDE4ODg3OH0.mZ3RLAJdRf7-7GAzW4YdzTlRW980tLzWouYmWvtpY60
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

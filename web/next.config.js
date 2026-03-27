@@ -8,11 +8,6 @@ const nextConfig = {
     unoptimized: true,
   },
   
-  // 禁用 ESLint 構建檢查
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  
   // 禁用 TypeScript 構建檢查
   typescript: {
     ignoreBuildErrors: true,
@@ -23,6 +18,12 @@ const nextConfig = {
   
   // 資源路徑
   assetPrefix: '/tender-system/',
+  
+  // 環境變數（用於構建時）
+  env: {
+    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co',
+    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-key',
+  },
 }
 
 module.exports = nextConfig
