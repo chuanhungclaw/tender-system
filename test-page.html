@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>銓宏國際 AI 標案系統 - 測試頁面</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        h1 { font-size: 2.5em; margin-bottom: 20px; }
+        p { font-size: 1.2em; line-height: 1.6; }
+        .status { 
+            background: #4CAF50; 
+            padding: 15px; 
+            border-radius: 10px; 
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .features {
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .features li { margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 銓宏國際 AI 標案系統</h1>
+        
+        <div class="status">
+            ✅ GitHub Pages 部署成功！
+        </div>
+        
+        <p><strong>部署時間：</strong> <span id="timestamp"></span></p>
+        
+        <div class="features">
+            <h2>📋 系統功能</h2>
+            <ul>
+                <li>🤖 自動化標案搜索</li>
+                <li>📊 AI 智能分析與報價建議</li>
+                <li>📱 Telegram 每日推送</li>
+                <li>👥 客戶關係管理（CRM）</li>
+                <li>📈 投標追蹤與分析</li>
+            </ul>
+        </div>
+        
+        <p><strong>技術棧：</strong> Next.js + GitHub Pages</p>
+        <p><strong>倉庫：</strong> <a href="https://github.com/chuanhungclaw/tender-system" style="color: #fff;">github.com/chuanhungclaw/tender-system</a></p>
+    </div>
+    
+    <script>
+        document.getElementById('timestamp').textContent = new Date().toLocaleString('zh-TW');
+    </script>
+</body>
+</html>
