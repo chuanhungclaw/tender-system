@@ -7,7 +7,7 @@
   # 構建命令
   command = "npm run build"
   
-  # 發布目錄
+  # 發布目錄（Next.js 不需要設定，Netlify 會自動處理）
   publish = ".next"
 
 # 環境變數
@@ -15,17 +15,10 @@
   NODE_VERSION = "20"
   NPM_VERSION = "10"
 
-# Next.js 插件
+# Next.js 插件（必須）
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-# 重定向規則（可選）
-[[redirects]]
-  from = "/api/*"
-  to = "/api/:splat"
-  status = 200
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Next.js 設定
+[functions]
+  node_bundler = "esbuild"
