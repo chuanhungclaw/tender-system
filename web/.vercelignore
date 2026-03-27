@@ -1,0 +1,18 @@
+# Vercel 部署時忽略這些文件
+node_modules
+.next
+.env
+.env.local
+*.log
+.git
+.gitignore
+README.md
+.gitignore
+database/
+scripts/
+docs/
+reports/
+data/
+.github/
+*.md
+!web/README.md

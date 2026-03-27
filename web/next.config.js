@@ -10,12 +10,32 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   
-  // 靜態導出（可選，如果需要 GitHub Pages）
-  // output: 'export',
+  // 實驗性功能
+  experimental: {
+    // 優化構建
+    optimizePackageImports: ['@supabase/supabase-js', 'axios'],
+  },
+  
+  // Webpack 配置
+  webpack: (config, { isServer }) => {
+    // 優化構建
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+      };
+    }
+    return config;
+  },
   
   // 圖片優化
   images: {
     unoptimized: true,
+  },
+  
+  // 環境變數
+  env: {
+    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'https://tender-system.vercel.app',
   },
 }
 
