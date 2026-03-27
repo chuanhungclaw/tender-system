@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // 靜態導出（GitHub Pages 需要）
-  output: 'export',
+  // 生產環境使用 SSR（Vercel 支援）
+  // output: 'export', // 僅 GitHub Pages 需要，註解掉
   
-  // 禁用圖片優化（GitHub Pages 不支援）
+  // 圖片優化
   images: {
-    unoptimized: true,
+    unoptimized: false, // Vercel 支援圖片優化
   },
   
   // 禁用 ESLint 構建檢查
@@ -17,12 +17,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  
-  // 基礎路徑（替換为你的倉庫名稱）
-  basePath: '/tender-system',
-  
-  // 資源路徑
-  assetPrefix: '/tender-system/',
 }
 
 module.exports = nextConfig
