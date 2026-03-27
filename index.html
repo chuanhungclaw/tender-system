@@ -1,45 +1,21 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>銓宏國際 AI 標案系統</title>
+    <meta charset="UTF-8">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-        }
-        .container {
-            background: rgba(255,255,255,0.1);
-            padding: 40px;
-            border-radius: 20px;
-        }
-        h1 { font-size: 2em; margin-bottom: 20px; }
-        .status { 
-            background: #4CAF50; 
-            padding: 15px; 
-            border-radius: 10px; 
-            margin: 20px 0;
-        }
-        p { margin: 10px 0; }
+        body { font-family: Arial; background: linear-gradient(135deg, #667eea, #764ba2); color: white; text-align: center; padding: 50px; }
+        .box { background: rgba(255,255,255,0.1); padding: 40px; border-radius: 20px; max-width: 600px; margin: 0 auto; }
+        h1 { margin: 0 0 20px; }
+        .ok { background: #4CAF50; padding: 15px; border-radius: 10px; margin: 20px 0; }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="box">
         <h1>🚀 銓宏國際 AI 標案系統</h1>
-        <div class="status">
-            ✅ GitHub Pages 部署成功！
-        </div>
-        <p><strong>部署時間：</strong><span id="time"></span></p>
-        <p>Next.js + GitHub Pages</p>
+        <div class="ok">✅ GitHub Pages 部署成功！</div>
+        <p>測試頁面 - <span id="t"></span></p>
     </div>
-    <script>
-        document.getElementById('time').textContent = new Date().toLocaleString('zh-TW');
-    </script>
+    <script>document.getElementById('t').textContent=new Date().toLocaleString('zh-TW')</script>
 </body>
 </html>
