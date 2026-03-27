@@ -1,5 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // 靜態導出（GitHub Pages 需要）
+  output: 'export',
+  
+  // 禁用圖片優化（GitHub Pages 不支援）
+  images: {
+    unoptimized: true,
+  },
+  
   // 禁用 ESLint 構建檢查
   eslint: {
     ignoreDuringBuilds: true,
@@ -10,33 +18,11 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   
-  // 實驗性功能
-  experimental: {
-    // 優化構建
-    optimizePackageImports: ['@supabase/supabase-js', 'axios'],
-  },
+  // 基礎路徑（替換为你的倉庫名稱）
+  basePath: '/tender-system',
   
-  // Webpack 配置
-  webpack: (config, { isServer }) => {
-    // 優化構建
-    if (!isServer) {
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        fs: false,
-      };
-    }
-    return config;
-  },
-  
-  // 圖片優化
-  images: {
-    unoptimized: true,
-  },
-  
-  // 環境變數
-  env: {
-    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'https://tender-system.vercel.app',
-  },
+  // 資源路徑
+  assetPrefix: '/tender-system/',
 }
 
 module.exports = nextConfig
