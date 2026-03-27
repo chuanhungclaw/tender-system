@@ -10,6 +10,7 @@
     "lint": "next lint",
     "crawl": "node ../scripts/crawler.js",
     "notify": "node ../scripts/telegram-notify.js",
+    "bot": "node ../scripts/telegram-bot.js",
     "cron:daily": "npm run crawl && npm run notify"
   },
   "dependencies": {
