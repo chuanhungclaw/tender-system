@@ -1,0 +1,44 @@
+name: Daily Tender Crawler & Notify
+
+on:
+  schedule:
+    # 每天早上 7:30 執行（台灣時間）
+    - cron: '30 23 * * *'  # UTC 23:30 = 台灣時間 7:30
+  workflow_dispatch:  # 允許手動觸發
+
+jobs:
+  crawler-and-notify:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: web/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          cd web
+          npm ci
+
+      - name: Run crawler
+        run: |
+          cd web
+          npm run crawl
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+
+      - name: Send Telegram notification
+        run: |
+          cd web
+          npm run notify
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
