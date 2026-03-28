@@ -4,58 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>銓宏國際 AI 標案系統</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
-        }
-        .container {
-            max-width: 600px;
-            background: rgba(255,255,255,0.1);
-            padding: 40px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-        }
-        h1 {
-            font-size: 2em;
-            margin: 0 0 20px;
-        }
-        .success {
-            background: #4CAF50;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 20px 0;
-            font-size: 1.2em;
-        }
-        .info {
-            margin-top: 20px;
-            font-size: 0.9em;
-            opacity: 0.8;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
 </head>
 <body>
     <div class="container">
-        <h1>🚀 銓宏國際 AI 標案系統</h1>
-        <div class="success">✅ 系統已上線！</div>
-        <p>自動化標案搜索 + AI 智能分析 + Telegram 每日推送</p>
-        <p><strong>部署時間：</strong> <span id="time"></span></p>
-        <div class="info">
-            <p>技術棧：Next.js + Supabase + GitHub Pages</p>
-            <p>狀態：✅ 線上運行中</p>
+        <!-- 標頭 -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-rocket"></i>
+                <h1>銓宏國際 AI 標案系統</h1>
+            </div>
+            <div class="user-info">
+                <span id="user-name">Kevin</span>
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </header>
+
+        <!-- 統計卡片 -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-file-contract"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>總標案數</h3>
+                    <p id="total-tenders">0</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>進行中</h3>
+                    <p id="active-tenders">0</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>本月新增</h3>
+                    <p id="monthly-tenders">0</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>得標率</h3>
+                    <p id="win-rate">0%</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 標案列表 -->
+        <div class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-list"></i> 標案列表</h2>
+                <button class="btn btn-primary" onclick="addNewTender()">
+                    <i class="fas fa-plus"></i> 新增標案
+                </button>
+            </div>
+            <div id="tender-list" class="tender-list">
+                <!-- 標案會動態生成 -->
+            </div>
+        </div>
+
+        <!-- 新增標案表單 (預設隱藏) -->
+        <div id="tender-form" class="form-modal" style="display: none;">
+            <div class="form-content">
+                <h2><i class="fas fa-plus-circle"></i> 新增標案</h2>
+                <form id="new-tender-form">
+                    <div class="form-group">
+                        <label for="tender-name"><i class="fas fa-heading"></i> 標案名稱</label>
+                        <input type="text" id="tender-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tender-client"><i class="fas fa-building"></i> 客戶名稱</label>
+                        <input type="text" id="tender-client" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tender-budget"><i class="fas fa-money-bill-wave"></i> 預算 (NTD)</label>
+                        <input type="number" id="tender-budget" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="hideForm()">取消</button>
+                        <button type="submit" class="btn btn-primary">儲存</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- 狀態顯示 -->
+        <div class="status-bar">
+            <div class="status-item">
+                <i class="fas fa-database"></i>
+                <span>儲存: <span id="storage-status">LocalStorage</span></span>
+            </div>
+            <div class="status-item">
+                <i class="fas fa-clock"></i>
+                <span id="last-updated">未更新</span>
+            </div>
+            <div class="status-item">
+                <i class="fas fa-server"></i>
+                <span>部署: GitHub Pages</span>
+            </div>
         </div>
     </div>
-    <script>
-        document.getElementById('time').textContent = new Date().toLocaleString('zh-TW');
-    </script>
+
+    <script src="app.js"></script>
 </body>
 </html>
