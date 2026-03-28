@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>銓宏國際 AI 標案系統</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0 0 20px;
+        }
+        .success {
+            background: #4CAF50;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 1.2em;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .team-member {
+            background: rgba(255,255,255,0.15);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .team-member h3 {
+            margin-top: 0;
+        }
+        .status {
+            margin-top: 20px;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 銓宏國際 AI 標案系統</h1>
+        
+        <div class="success">
+            ✅ 系統已上線！
+        </div>
+        
+        <p><strong>你的 AI 團隊已就位：</strong></p>
+        
+        <div class="team-grid">
+            <div class="team-member">
+                <h3>🤖 業務銷售</h3>
+                <p>sales-agent</p>
+            </div>
+            <div class="team-member">
+                <h3>🎨 設計創意</h3>
+                <p>design-agent</p>
+            </div>
+            <div class="team-member">
+                <h3>📦 採購管理</h3>
+                <p>procure-agent</p>
+            </div>
+            <div class="team-member">
+                <h3>🏭 生產排程</h3>
+                <p>produce-agent</p>
+            </div>
+        </div>
+        
+        <p><strong>部署時間：</strong> <span id="time"></span></p>
+        
+        <div class="status">
+            <p>技術棧：純靜態 HTML + GitHub Pages</p>
+            <p>狀態：✅ 線上運行中</p>
+            <p>網址：https://chuanhungclaw.github.io/tender-system/</p>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('time').textContent = new Date().toLocaleString('zh-TW');
+    </script>
+</body>
+</html>
