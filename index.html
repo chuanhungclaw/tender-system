@@ -6,32 +6,33 @@
     <title>銓宏國際 AI 標案系統</title>
     <style>
         body {
-            font-family: 'Microsoft YaHei', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
         }
         .container {
             max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        .header {
             background: rgba(255,255,255,0.1);
-            padding: 30px;
+            padding: 40px;
             border-radius: 20px;
-            margin-bottom: 30px;
             backdrop-filter: blur(10px);
         }
         h1 {
             font-size: 2.5em;
             margin: 0 0 20px;
         }
-        .status {
+        .success {
             background: #4CAF50;
+            color: white;
             padding: 15px;
             border-radius: 10px;
             margin: 20px 0;
@@ -40,49 +41,36 @@
         }
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
             margin: 30px 0;
         }
         .feature {
             background: rgba(255,255,255,0.15);
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
         }
-        .feature h3 {
-            margin-top: 0;
-        }
-        .buttons {
-            margin-top: 30px;
-        }
-        .btn {
-            display: inline-block;
-            background: white;
-            color: #667eea;
-            padding: 12px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 10px;
-            transition: transform 0.3s;
-        }
-        .btn:hover {
-            transform: translateY(-3px);
+        .info {
+            margin-top: 20px;
+            font-size: 0.9em;
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>🚀 銓宏國際 AI 標案系統</h1>
-            <div class="status">✅ 系統已上線！</div>
-            <p>自動化標案搜索 + AI 智能分析 + Telegram 每日推送</p>
+        <h1>🚀 銓宏國際 AI 標案系統</h1>
+        
+        <div class="success">
+            ✅ GitHub Pages 部署成功！
         </div>
+        
+        <p><strong>功能特色：</strong></p>
         
         <div class="features">
             <div class="feature">
                 <h3>🤖 自動搜索</h3>
-                <p>每日自動搜索政府/民間標案</p>
+                <p>每日自動搜索標案</p>
             </div>
             <div class="feature">
                 <h3>📊 AI 分析</h3>
@@ -90,20 +78,19 @@
             </div>
             <div class="feature">
                 <h3>📱 即時推送</h3>
-                <p>Telegram 每日 8:00 推送</p>
+                <p>Telegram 每日推送</p>
             </div>
             <div class="feature">
                 <h3>👥 CRM 管理</h3>
-                <p>客戶關係管理系統</p>
+                <p>客戶關係管理</p>
             </div>
         </div>
         
-        <p><strong>技術棧：</strong> Next.js + Supabase + GitHub Pages</p>
         <p><strong>部署時間：</strong> <span id="timestamp"></span></p>
         
-        <div class="buttons">
-            <a href="https://github.com/chuanhungclaw/tender-system" class="btn" target="_blank">查看原始碼</a>
-            <a href="https://vercel.com/chuanhungclaw/tender-system" class="btn" target="_blank">Vercel 部署</a>
+        <div class="info">
+            <p>技術棧：GitHub Pages + 靜態 HTML</p>
+            <p>狀態：✅ 線上運行中</p>
         </div>
     </div>
     
