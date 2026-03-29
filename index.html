@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>銓宏國際 AI 標案系統</title>
+    <title>銓宏國際 AI 標案系統 - GitHub Pages</title>
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             min-height: 100vh;
@@ -18,17 +17,15 @@
             text-align: center;
             padding: 20px;
         }
-        .container {
-            max-width: 600px;
+        .card {
             background: rgba(255,255,255,0.1);
             padding: 40px;
             border-radius: 20px;
             backdrop-filter: blur(10px);
+            max-width: 600px;
+            width: 100%;
         }
-        h1 {
-            font-size: 2.5em;
-            margin: 0 0 20px;
-        }
+        h1 { font-size: 2.5em; margin-bottom: 20px; }
         .success {
             background: #4CAF50;
             padding: 15px;
@@ -36,65 +33,42 @@
             margin: 20px 0;
             font-size: 1.2em;
         }
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 30px 0;
-        }
-        .feature {
-            background: rgba(255,255,255,0.15);
-            padding: 15px;
-            border-radius: 10px;
-        }
-        .feature h3 {
-            margin-top: 0;
-        }
         .info {
-            margin-top: 20px;
-            font-size: 0.9em;
-            opacity: 0.8;
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="card">
         <h1>🚀 銓宏國際 AI 標案系統</h1>
-        
-        <div class="success">
-            ✅ GitHub Pages 部署成功！
-        </div>
-        
-        <div class="features">
-            <div class="feature">
-                <h3>🤖 自動搜索</h3>
-                <p>每日自動搜索政府/民間標案</p>
-            </div>
-            <div class="feature">
-                <h3>📊 AI 分析</h3>
-                <p>智能分析與報價建議</p>
-            </div>
-            <div class="feature">
-                <h3>📱 即時推送</h3>
-                <p>Telegram 每日 8:00 推送</p>
-            </div>
-            <div class="feature">
-                <h3>👥 CRM 管理</h3>
-                <p>客戶關係管理系統</p>
-            </div>
-        </div>
-        
-        <p><strong>部署時間：</strong> <span id="timestamp"></span></p>
+        <div class="success">✅ GitHub Pages 部署成功！</div>
         
         <div class="info">
-            <p>技術棧：GitHub Pages + 靜態 HTML</p>
-            <p>狀態：✅ 線上運行中</p>
-            <p>網址：https://chuanhungclaw.github.io/tender-system/</p>
+            <strong>部署平台：</strong> GitHub Pages
+        </div>
+        
+        <div class="info">
+            <strong>網址：</strong> https://chuanhungclaw.github.io/tender-system/
+        </div>
+        
+        <div class="info">
+            <strong>部署時間：</strong> <span id="time"></span>
+        </div>
+        
+        <div class="info">
+            <strong>系統功能：</strong>
+            <p>• 自動化標案搜索</p>
+            <p>• AI 智能分析</p>
+            <p>• Telegram 每日推送</p>
         </div>
     </div>
     
     <script>
-        document.getElementById('timestamp').textContent = new Date().toLocaleString('zh-TW');
+        document.getElementById('time').textContent = new Date().toLocaleString('zh-TW');
+        console.log('GitHub Pages 網站載入成功');
     </script>
 </body>
 </html>
