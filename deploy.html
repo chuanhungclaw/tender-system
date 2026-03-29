@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>銓宏國際 AI 標案系統</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0 0 20px;
+        }
+        .success {
+            background: #4CAF50;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 1.2em;
+        }
+        .status {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 10px;
+        }
+        .status-item {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .check {
+            color: #4CAF50;
+        }
+        .loading {
+            color: #FF9800;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 銓宏國際 AI 標案系統</h1>
+        
+        <div class="success">
+            ✅ 系統已上線！
+        </div>
+        
+        <p>自動化標案搜索 + AI 智能分析 + Telegram 每日推送</p>
+        
+        <div class="status">
+            <div class="status-item">
+                <span class="check">✓</span>
+                <span>網站部署：<strong>GitHub Pages</strong></span>
+            </div>
+            <div class="status-item">
+                <span class="check">✓</span>
+                <span>技術棧：<strong>HTML5 + CSS3 + JavaScript</strong></span>
+            </div>
+            <div class="status-item">
+                <span class="check">✓</span>
+                <span>資料儲存：<strong>LocalStorage</strong></span>
+            </div>
+            <div class="status-item">
+                <span class="check">✓</span>
+                <span>AI 團隊：<strong>11個專用 Agent</strong></span>
+            </div>
+            <div class="status-item">
+                <span class="loading">⏳</span>
+                <span>技能安裝：<strong>44個技能中 2個已安裝</strong></span>
+            </div>
+        </div>
+        
+        <p><strong>部署時間：</strong> <span id="time"></span></p>
+        <p><strong>網站網址：</strong> https://chuanhungclaw.github.io/tender-system/</p>
+    </div>
+    
+    <script>
+        document.getElementById('time').textContent = new Date().toLocaleString('zh-TW');
+        
+        // 簡單的 LocalStorage 測試
+        if (typeof(Storage) !== "undefined") {
+            localStorage.setItem('tender_system_test', 'ready');
+            console.log('LocalStorage 測試通過');
+        }
+    </script>
+</body>
+</html>
